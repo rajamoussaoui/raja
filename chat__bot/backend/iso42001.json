@@ -1,0 +1,285 @@
+{
+    "description": "ISO/IEC 42001 is the first international standard for Artificial Intelligence Management Systems (AIMS). It provides requirements and guidelines for organizations to establish, implement, maintain, and continually improve an AI management system. The standard ensures responsible AI development and deployment by addressing risk management, ethical considerations, transparency, accountability, and regulatory compliance. It applies to organizations of all sizes that develop, deploy, or use AI-based systems.",
+    "questions": {
+      "chapter 4: Context of the organization": {
+        "4.1: Understanding the organization and its context" : [
+          "the organisation must identify internal Key  (internal factors include governance, objectives, policies, contractual obligations, and the intended purpose of the AI system).  and external factor Key (external factors to consider include legal requirements, regulatory policies, ethical norms, market trends, and the impact of AI usage incentives or consequences.) that impact the organization's AI management system and its ability to achieve its objectives. ",
+          "  The organization must define the purpose of the AI systems it develops, provides, or uses and clarify its role in managing them.",
+          " The organization’s roles can determine the applicability and extent of applicability of the requirements and controls in this document.",
+          "External and internal issues to be addressed under this clause can vary according to the organization’s roles and jurisdiction and their impact on its ability to achieve the intended outcome(s) of its AI management system.",
+          "The organization must define the purpose of its AI systems and its role in their development, provision, or use. Possible roles include AI providers, producers, customers, partners, subjects, and relevant authorities."
+
+        ],
+        "4.2: Understanding the needs and expectations of interested parties":[
+          "The organization identifies relevant interested parties and their specific requirements (e.g., learners, other beneficiaries, and the organization's staff).",
+          "The organization monitors and regularly reviews information related to these relevant interested parties and their requirements."
+        ],
+        "4.3: Determining the scope of the AI management system":[
+          "The organization defines the boundaries and applicability of the AIMS to establish its scope, taking into account the identified external and internal issues.",
+          "When defining the scope, the organization must consider internal and external factors (4.1) ",
+          "The scope of application considers the requirements of relevant interested parties referenced in clause 4.2 of ISO42001.  -  The AI management system's scope defines the organization's activities related to leadership, planning, support, operations, performance, evaluation, improvement, and controls.",
+          "The scope of application considers the organization's products and services.",
+          "The scope of application of the AIMS is available and maintained as documented information.",
+          "The organization provides a justification for any normative requirement deemed not applicable within the scope of its AIMS implementation."
+        ],
+        "4.4 : AI management system":[
+          "The organization establishes, implements, maintains, and continuously improves its processes and AIMS.",
+          "The organization determines the required input elements and the expected output elements for the processes of its AIMS.",
+          "The organization determines the sequence and interaction of the processes necessary for its AIMS",
+          "The organization determines the necessary resources and ensures their availability for the processes of its AIMS.",
+          "The organization assigns responsibilities and authorities for the processes of its AIMS.",
+          "The organization regularly evaluates the processes of its AIMS",
+          "The organization implements all required modifications to the processes to ensure they produce the expected results.",
+          "The organization improves the processes and the artificial intelligence management system.",
+          "Regarding the performance of the processes of its quality management system, the organization: \n takes into account risks and opportunities; \n determines and applies criteria, methods, and indicators; \n retains and updates documented information.",
+          "The organization takes into account risks and opportunities.",
+          "The organization determines and applies the criteria, methods, including measurements and performance indicators, of its management system.",
+          "The organization keeps updated the documented information necessary for the operation of its processes.",
+          "The organization retains documented information to ensure that the processes are implemented as planned."
+        ]
+      },
+      "chapter 5: Leadership": {
+        "5.1: Leadership and Commitment":[
+          "The organization ensures that the AI policy and objectives are compatible with its strategic direction.",
+          " The integration of AIMS requirements into business processes is verified. ",
+          " Ensuring the availability of the resources required for the AI management system.",
+          "The organization ensures that the AIMS achieves its intended results. ",
+          "Continuous improvement of the AIMS is promoted. ",
+          "Ensuring the communication of the importance of effective AI management and compliance with the AI management system requirements .",
+          "Supporting other relevant roles to demonstrate their leadership as it applies to their areas of responsibility."
+        ],
+        "5.2: AI Policy" :[
+          "Top management must establish an AI policy that aligns with the organization's purpose.",
+          " The AI policy that aligns with the organization's purpose and provides a framework for setting AI objectives (see 6.2).",
+          " The AI policy  must include a commitment to meet applicable requirements. ",
+          " The AI policy  must include  a commitment to continual improvement of the AI management system.",
+          " The AI policy  must be available as documented information",
+          " The AI policy  must refer as relevant to other organizational policies",
+          " The AI policy  must be communicated within the organization",
+          " The AI policy  must be available to interested parties, as appropriate."
+        ],
+        "5.3: Roles, Responsibilities, and Authorities" :[
+          "Roles and responsibilities for AIMS governance are clearly defined and communicated. (5.3)",
+          "The organization ensures that AIMS conforms to ISO 42001 requirements. (5.3)",
+          "Performance reports on AIMS implementation are prepared and shared with top management. "
+        ]
+      },
+
+      "chapter 6: Planning": {
+        "6.1: Actions to Address Risks and Opportunities" :[
+          "The organization considers the issues, risks, and opportunities to ensure the AI management system (AI MS) achieves its intended results.",
+          "The organization considers the issues, risks, and opportunities to enhance desirable effects.",
+          "The organization considers the issues, risks, and opportunities to prevent or reduce undesirable effects.",
+          "Risks and opportunities are identified based on the AI system’s context and intended use.",
+          "Risks and opportunities are identified based on the AI system’s context and intended use.",
+          "The risk assessment process is aligned with the AI policy and objectives.",
+          "The process is designed to produce consistent, valid, and comparable results",
+          "Risks that aid or prevent achieving AI objectives are identified.",
+          "The potential consequences of risks are assessed.",
+          "The levels of risk are determined based on consequences and likelihood.",
+          "Risks are prioritized for treatment based on the evaluation.",
+          "The AI risk assessment process is documented and retained.",
+          "- The organization defines an AI risk treatment process based on risk assessment results.",
+          "A Statement of Applicability (SoA) is produced, listing necessary controls.",
+          "Justifications for including or excluding controls are documented.",
+          "An AI risk treatment plan is formulated and approved by designated management.",
+          "AI system impact assessment",
+          "A process for assessing potential consequences is defined and documented.",
+          "The process considers the technical and societal context of the AI system’s deployment.",
+          "The process aligns with applicable jurisdictions and regulatory requirements.",
+          "Potential consequences for individuals, groups, and societies are identified.",
+          "The impact assessment evaluates the AI system’s deployment, intended use, and foreseeable misuse.",
+          "The results of the impact assessment are documented.",
+          "The results of the impact assessment are made available to relevant interested parties, as appropriate."
+        ],
+        "6.2: AI Objectives and Planning to Achieve Them" :[
+          "Are AI Objectives Aligned with the AI Policy",
+          "AI objectives shall be available as documented information to ensure traceability and accountability.",
+          "The planning must Define what will be done (What will be done: Specific actions required to meet the objectives.)",
+          "Potential consequences for individuals, groups, and societies are identified.",
+          "The planning to achieve its AI objectives must identify required resources (What resources will be required: Allocation of financial, technological, and human resources.)",
+          "The planning must Assign responsibilities( who will be responsible : Clear designation of roles and responsibilities.)",
+          "The planning must Set timelines( When it will be completed: Timelines and milestones for progress tracking)",
+          " The planning must evaluate results(how the results will be evaluated Performance metrics and assessment methods to gauge effectiveness.)"
+        ],
+        "6.3: Planning of Changes" :[
+          "Are the changes to the AI management system carried out in a planned manner.",
+          "Changes shall be documented to ensure transparency and traceability.",
+          "Changes shall be assessed for potential impacts on AI objectives and policies.",
+          "Changes shall be communicated to relevant stakeholders to ensure smooth implementation."
+        ]
+      },
+      "chapter 7: Support": {
+        "7.1: Resources" :[
+          "The organization shall determine the resources needed for the establishment, implementation, maintenance, and continual improvement of the AI management system.",
+          "The organization shall ensure that resources for AI systems are accounted for to understand and address risks and impacts.",
+          "The organization shall ensure that resources for AI systems are accounted for to understand and address risks and impacts.",
+          "The organization should identify and document relevant resources required for the activities at given AI system life cycle stages and other AI-related activities relevant for the organization.",
+          "The organization shall document resources relevant to other AI-related activities.",
+          "The organization shall ensure documentation includes AI system components, data resources, tooling resources, system and computing resources, and human resources.",
+          "The organization shall use documentation methods such as data flow diagrams or system architecture diagrams to document resources.",
+          "The organization shall ensure resource documentation is used to understand risks and potential impacts of the AI system.",
+          "The organization shall determine if resources are available and, if not, revise the AI system design or deployment requirements.",
+          "The organization shall document information about the data resources utilized for the AI system.",
+          "The organization shall document the provenance of the data",
+          "The organization shall document information about the data resources utilized for the AI system.",
+          "The organization shall ensure that resources for AI systems are accounted for to understand and address risks and impacts.",
+          "The organization shall document information about the data resources utilized for the AI system.",
+          "The organization shall ensure that resources for AI systems are accounted for to understand and address risks and impacts.",
+          "The organization shall document information about the data resources utilized for the AI system.",
+          "The organization shall ensure that resources for AI systems are accounted for to understand and address risks and impacts.",
+          "The organization shall document information about the tooling resources utilized for the AI system.",
+          "The organization shall document information about the tooling resources utilized for the AI system.",
+          "The organization shall document the data conditioning tools or processes used",
+          "The organization shall document the optimization methods applied.",
+          "The organization shall document the evaluation methods used.",
+          "The organization shall document the provisioning tools for resources.",
+          "The organization shall document the tools used to aid model development",
+          "The organization shall document the software and hardware used for AI system design, development, and deployment.",
+          "The organization shall document information about the system and computing resources utilized for the AI system.",
+          "The organization shall document the resource requirements of the AI system (e.g., to ensure it can run on constrained devices)",
+          "The organization shall document the location of system and computing resources (e.g., on-premises, cloud, edge computing).",
+          "The organization shall document the processing resources, including network and storage.",
+          "The organization shall document the environmental impact of the hardware used to run AI system workloads (e.g., energy consumption, manufacturing impact).",
+          "The organization shall consider the different resource requirements for development, deployment, and operation of the AI system."
+        ],
+        "7.2: Competence" :[
+          "The organization shall determine the necessary competence of persons doing work under its control that affects AI performance.",
+          "The organization shall ensure that these persons are competent based on appropriate education, training, or experience.",
+          "The organization shall take actions to acquire the necessary competence, where applicable.",
+          "The organization shall evaluate the effectiveness of actions taken to acquire competence",
+          "The organization shall maintain documented information as evidence of competence",
+          "The organization shall document information about the human resources and their competences utilized for the AI system.",
+          "The organization shall ensure human resources are identified for all stages of the AI system life cycle, including development, deployment, operation, change management, maintenance, transfer, decommissioning, verification, and integration.",
+          "The organization shall consider the need for diverse expertise and include the types of roles necessary for the system",
+          "The organization shall ensure human resources include, but are not limited to:\n— data scientists;\n— roles related to human oversight of AI systems;\n— experts on trustworthiness topics (e.g., safety, security, privacy);\n— AI researchers and specialists;\n— domain experts relevant to the AI systems.",
+          "The organization shall consider the inclusion of specific demographic groups related to data sets used to train machine learning models, if their inclusion is necessary for system design.",
+          "The organization shall ensure that different human resources are available at different stages of the AI system life cycle."
+        ],
+        "7.3: Awareness" :[
+          "Persons doing work under the organization’s control shall be aware of: the AI policy",
+          "Persons doing work under the organization’s control shall be aware of:their contribution to the effectiveness of the AI management system, including the benefits of improved AI performance",
+          "Persons doing work under the organization’s control shall be aware of: the implications of not conforming with the AI management system requirements"
+        ],
+        "7.4: Communication" :[
+          "What it will communicate;",
+          "When to communicate;",
+          "With whom to communicate;",
+          "How to communicate."
+        ],
+        "7.5: Documented Information" :[
+          "The AIMS includes the documented information required by ISO 42001",
+          "The AIMS includes the documented information that the organization deems necessary for the effectiveness of the AIMS",
+          "When creating and updating documented information, the organization ensures that the identification and description of the documented information (e.g., title, date, author, reference number) are appropriate.",
+          "Similarly, the organization ensures that their format (e.g., language, software version, graphics) and medium (e.g., electronic, paper) are appropriate",
+          "Similarly, the organization ensures that the review conducted (and its approval to determine relevance and suitability) is appropriat",
+          "Documented information is available, accessible, understood, and suitable for use whenever and wherever it is needed.",
+          "Documented information is properly protected (e.g., from loss of confidentiality, improper use, or loss of integrity).",
+          "Documented information, including externally sourced information, is controlled in terms of identification, distribution, access, retrieval, and use",
+          "Documented information is controlled in terms of its storage and protection, including maintaining its readability",
+          "Documented information is controlled in terms of modifications (e.g., version control)",
+          "Control measures for the identification, storage, protection, accessibility, retention period, and disposal of records.",
+          "Documented information is controlled in terms of its retention and disposal",
+          "Documented information retained as evidence of conformity is protected from unintentional alteration."
+        ]
+      },
+      "chapter 8:Operation": {
+        "8.1: Operational Planning and Control" :[
+          "The organization establishes criteria for processes necessary for the operation of the AI Management System (AIMS).",
+          "Implementation of Process Control :The organization controls processes according to the established criteria.",
+          "The organization applies controls determined under Clause 6.1.3 for managing the AI system life cycle (development, usage, etc.).",
+          "The organization monitors the effectiveness of implemented controls and takes corrective actions when expected results are not achieved.",
+          "Documented information is available to ensure that processes have been carried out as planned",
+          "The organization controls planned changes and evaluates the impact of unintended changes, taking actions to mitigate adverse effects.",
+          "The organization ensures effective control of externally provided elements that impact the AIMS.",
+          "Documented information ensures that processes have been carried out as planned.",
+          "Documented information demonstrates the conformity of products and services to applicable requirements.",
+          "The outputs of this planning are suited to the organization's operational activity execution methods.",
+          "The organization controls planned changes, analyzes the consequences of unforeseen changes, and, if necessary, takes actions to mitigate any negative effects",
+          "The organization ensures that externally provided processes, outsourced processes (products or services that are relevant to the AI management system )are controlled "
+        ],
+        "8.2: AI risk assessment" :[
+          "The organization performs AI risk assessments at planned intervals or when significant changes occur, in accordance with Clause 6.1.2.",
+          "The organization retains documented information on the results of all AI risk assessments.. "
+        ],
+        "8.3: AI risk treatment" :[
+          "The organization implements the AI risk treatment plan according to Clause 6.1.3 and verifies its effectiveness.",
+          "If new risks are identified, the organization performs a risk treatment process in accordance with Clause 6.1.3.",
+          "If risk treatment options are ineffective, they are reviewed, revalidated, and updated in the risk treatment plan.",
+          "The organization retains documented information on the results of all AI risk treatments."
+        ],
+        "8.4: AI system impact assessment" :[
+          "Ensure the organization performs AI system impact assessments according to Clause 6.1.4. at planned intervals ",
+          "The organization Check whether the impact assessment has been carried out at planned intervals or when significant changes are proposed.",
+          "The organization Confirm that impact assessments are performed at regular intervals as specified in the organization’s policies or procedures.",
+          "The organization Verify if assessments are also carried out when significant changes to the AI system are proposed.",
+          "Ensure that the organization retains adequate documentation of all AI system impact assessment results",
+          "The organization must classify risks by severity (e.g., low, medium, high) to prioritize actions.",
+          "The organization Verify that the assessments take into account any major changes in the AI systems and the potential impacts of those changes",
+          "The organization retains documented information describing the results of the change review, the individuals authorized to approve changes, and any necessary actions resulting from the review"
+        ]
+
+      },
+      "chapter 9: Performance Evaluation ": {
+        "9.1: Monitoring, Measurement, Analysis, and Evaluation" :[
+          "The organization shall determine what needs to be monitored and measured.",
+          "The organization shall define the methods for monitoring, measurement, analysis, and evaluation.",
+          "The organization determines the acceptance criteria to be used",
+          "The organization shall specify when monitoring and measuring shall be performed",
+          "The organization shall determine when the results shall be analyzed and evaluated.",
+          "The organization shall evaluate the performance and effectiveness of the AI management system",
+          "The organization shall maintain documented information as evidence of the results"
+        ],
+        "9.2: Internal Audit" :[
+          "The organization shall conduct internal audits to ensure conformity with its own requirements.",
+          "The organization shall conduct internal audits to ensure conformity with the requirements of ISO 42001.",
+          "The organization shall ensure the AI management system is effectively implemented and maintained.",
+          "The organization shall plan, establish, implement, and maintain an internal audit programme, including frequency, methods, responsibilities, planning requirements, and reporting",
+          "The organization shall consider the importance of processes and the results of previous audits when establishing the internal audit programme.",
+          "The organization shall define the audit objectives, criteria, and scope for each audit.",
+          "The organization shall select auditors and conduct audits to ensure objectivity and impartiality.",
+          "The organization shall ensure that the results of audits are reported to relevant managers.",
+          "The organization shall maintain documented information as evidence of the audit programme and audit results."
+        ],
+        "9.3: Management Review" :[
+          "The organization’s top management shall review the AI management system at planned intervals.",
+          "The organization shall ensure the review evaluates the continuing suitability of the AI management system",
+          "The organization shall ensure the review evaluates the continuing adequacy of the AI management system.",
+          "The organization shall ensure the review evaluates the continuing effectiveness of the AI management system",
+          "The organization shall include the status of actions from previous management reviews as an input to the management review.",
+          "The organization shall include changes in external and internal issues relevant to the AI management system as an input to the management review",
+          "The organization shall include changes in the needs and expectations of interested parties relevant to the AI management system as an input to the management review",
+          "The organization shall include information on the AI management system’s performance, including trends in nonconformities and corrective actions, as an input to the management review.",
+          "The organization shall include monitoring and measurement results as an input to the management review.",
+          "The organization shall include audit results as an input to the management review.",
+          "The organization shall include opportunities for continual improvement as an input to the management review",
+          "The organization shall ensure the results of the management review include decisions related to continual improvement opportunities",
+          "The organization shall ensure the results of the management review include any need for changes to the AI management system.",
+          "The organization shall maintain documented information as evidence of the results of management reviews"
+        ]
+      },
+      "chapter 10: Improvement": {
+        "10.1: Continual Improvement" :[
+          "The organization identifies and selects improvement opportunities to meet customer requirements and enhance satisfaction",
+          "The organization takes all necessary actions to meet customer requirements and enhance satisfaction.",
+          "The organization improves its products and services to meet requirements and consider future needs and expectations.",
+          "The organization corrects, prevents, or reduces undesirable effects.",
+          "The organization improves the performance (effectiveness, efficiency, perceived quality…) of its management system."
+        ],
+        "10.2: Nonconformity and Corrective Action" :[
+          "The organization shall react to nonconformities by taking action to control and correct them.",
+          "The organization shall deal with the consequences of nonconformities",
+          "The organization shall review the nonconformity to understand its nature and impact.",
+          "The organization shall determine the root cause(s) of the nonconformity",
+          "The organization shall determine if similar nonconformities exist or could potentially occur",
+          "The organization shall implement any necessary actions to address the root cause(s) of the nonconformity.",
+          "The organization shall review the effectiveness of corrective actions taken.",
+          "The organization shall make changes to the AI management system, if necessary, to prevent future nonconformities.",
+          "The organization shall ensure corrective actions are appropriate to the effects of the nonconformities encountered.",
+          "The organization shall maintain documented information as evidence of the nature of nonconformities and actions taken.",
+          "The organization shall maintain documented information as evidence of the results of corrective actions"
+        ]
+      }
+    }
+  }
+  

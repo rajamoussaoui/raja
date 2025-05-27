@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@types/date-fns": "^2.5.3",
+    "axios": "^1.8.3",
+    "date-fns": "^4.1.0",
+    "jspdf": "^3.0.1",
+    "react-router-dom": "^7.6.0",
+    "uuid": "^11.1.0"
+  }
+}

@@ -1,0 +1,125 @@
+{
+    "description": "ISO 9001 est une norme qui définit les critères pour un système de management de la qualité.",
+    "questions": {
+        "chapter 4: General_Requirements_for_Risk_Management_System": {
+            "4.1: Risk_Management_Process" : [
+                "Le système de gestion de la qualité de l’organisation intègre-t-il la gestion des risques ?processus de gestion ?",
+                "Les informations et données de production et de post-production sont-elles collectées et examiné dans le cadre du processus de gestion des risques ?",
+                "Le processus de gestion des risques s'étend-il jusqu'à la post-production phase (y compris la stérilisation, l’emballage et l’étiquetage, le cas échéant) ?",
+                "L'organisation a-t-elle assuré la disponibilité d'un système de gestion des risques procédure dans le cadre de la conception et du développement de son dispositif médical ?"
+            ],
+            "4.2: Management_Responsibilities": [
+                "La haute direction est-elle impliquée dans l’orientation globale et l’examen de l’efficacité du processus de gestion des risques ?",
+                "Des ressources adéquates sont-elles prévues pour des activités efficaces de gestion des risques ?",
+                "La haute direction participe-t-elle à un examen périodique des activités de gestion des risques pour corriger les faiblesses, mettre en œuvre des améliorations et s’adapter aux changements ?"
+            ],
+            "4.3: Competence_of_Personnel":[
+                "Seules les personnes compétentes possédant les connaissances et l'expérience nécessaires effectuent les tâches de gestion des risques : construction, production, détermination de l'utilisation prévue, application du dispositif médical ?",
+                "Les dossiers du personnel sont-ils correctement conservés, en toute confidentialité et sécurité, et sans duplication ?"
+            ],
+            "4.4 and 4.5: Risk_Management_Plan/File" :[
+                "Un plan correctement organisé et maintenu pour une gestion continue des risques est-il en place ?",
+                "Le plan encourage-t-il une évaluation objective et complète des risques ?",
+                "Les critères d’acceptabilité des risques dans le plan découlent-ils de votre politique de détermination des niveaux acceptables de risque des appareils ?",
+                "L'emplacement de tous les dossiers et autres documents applicables à l'activité de gestion des risques est-il correctement enregistré et conservé, avec une récupération facile à partir d'un fichier ou d'un index de fichiers ?",
+                "Le dossier de gestion des risques démontre-t-il pleinement que le processus de gestion des risques est appliqué à chaque danger identifié ?"
+            ]
+    },
+        "chapter 5: Risk_Analysis": {
+            "5.1: Risk_Analysis_Process":[
+                "Avez-vous veillé à ce qu’un ensemble de données de base minimum soit disponible pour la traçabilité, les revues de direction et les audits ?",
+                "L’organisation a-t-elle systématiquement évalué les travaux antérieurs pour déterminer leur applicabilité à votre analyse des risques actuelle ?",
+                "Avez-vous clarifié la portée de votre analyse des risques et si elle vérifie son exhaustivité ?",
+                "Le cas échéant, avez-vous vérifié les informations disponibles sur l’analyse des risques pour un dispositif médical similaire sur le marché ?"
+            ],
+            "5.2 and 5.3: " :[
+                "Les utilisateurs prévus ont-ils été pris en compte et si un utilisateur profane ou un professionnel qualifié utilisera l'appareil ?",
+                "Les dangers futurs dus aux utilisations potentielles du dispositif médical, ainsi que toute mauvaise utilisation raisonnablement prévisible, ont-ils été pris en compte et documentés ?",
+                "Toutes les caractéristiques qualitatives ou quantitatives pouvant être liées au principe de fonctionnement du dispositif, à son utilisation prévue et/ou à une mauvaise utilisation raisonnablement prévisible qui pourrait affecter la sécurité du dispositif médical ont-elles été documentées ?",
+                "A-t-on envisagé si les limites de ces caractéristiques, si elles étaient dépassées, pourraient affecter la sécurité de l’appareil ?"
+        ],
+            "5.4 and 5.5: ":[
+                "Des situations dangereuses ont-elles été identifiées, avec les risques associés évalué ?",
+                "Les dangers typiques ont-ils été répertoriés, démontrant la relation avec les situations dangereuses, les séquences d’événements prévisibles et les dommages possibles associés ?",
+                "Les défauts systématiques ou la séquence d’événements conduisant à des situations dangereuses sont-ils surveillés en permanence ?",
+                "Des données quantitatives sont-elles mises à disposition, dans la mesure du possible, pour le développement d'un nouvel appareil ou pour un risque de sécurité ?"
+            ]          
+        },
+        "chapter 6: Risk_Evaluation": {
+            "6.1: Actions to Address Risks and Opportunities" :[
+                "L’acceptabilité du risque du dispositif médical a-t-elle été définie ?",
+                "Les risques estimés ont-ils été évalués en utilisant les critères d’acceptabilité des risques définis dans le plan de gestion des risques ?",
+                "Les risques ont-ils été activement étudiés pour déterminer ceux qui nécessitent des contrôles ?"
+                
+            ],
+            "6.2: Quality Objectives and Planning to Achieve Them" :[
+                "Les risques devant être contrôlés sont-ils identifiés pour des mesures ultérieures ?",
+                "Les risques sont-ils réévalués de manière appropriée (après la mise en œuvre des contrôles des risques) ? Notez que cette évaluation peut devoir se poursuivre après la production.",
+                "L’impact des mesures de contrôle des risques a-t-il été évalué ?",
+                "La hiérarchie a-t-elle été explicitement prise en compte "
+            ]
+        },
+        "chapter 7: Risk_Control":{
+            "7.1: Risk_Control_Option_Analysis" :[
+                "Les mécanismes de risque du Guide ISO/IEC 63:2019 ont-ils été pris en compte ? et suivi ?",
+                "Des mesures de protection, telles que des étapes d’inspection visuelle dans le processus de fabrication, sont-elles appliquées de manière appropriée ?"
+            ],
+            "7.2: Implementation_of_Risk_Control_Measures" :[
+                "L’efficacité des mesures de contrôle des risques a-t-elle été validée à l’aide d’une étude de validation permettant d’établir une évaluation convaincante des risques résiduels ?",
+                "L'efficacité des mesures de contrôle des risques a-t-elle été vérifiée par diverses méthodes de test, telles que les tests d'utilisabilité (CEI 62366-1), les tests selon la norme de test, l'investigation clinique des dispositifs médicaux (ISO 14155) ou les études de performance clinique des dispositifs médicaux de diagnostic in vitro (ISO 20916) ?"
+            ],
+            "7.3: Residual_Risk_Evaluation" :[
+                "Les mesures de contrôle des risques mises en œuvre ont-elles rendu le risque concerné acceptable ?",
+                "Des mesures de contrôle des risques supplémentaires sont-elles continuellement étudiées jusqu’à ce que le risque résiduel ne dépasse pas les critères d’acceptabilité ?",
+                "Les risques sont-ils réévalués de manière appropriée après la mise en œuvre des contrôles des risques ? "
+            ],
+            "7.4: Benefit_Risk_Analysis" :[
+                "L’évaluation du dispositif a-t-elle prouvé que le risque ne dépasse pas les critères d’acceptabilité du risque et que le bénéfice du dispositif l’emporte sur le risque ?"
+            ],
+            "7.5 and 7.6: " :[
+                "Lors de la mise en œuvre de nouvelles mesures de contrôle des risques, seules ou combinées, examinet-on activement si elles introduisent ou non un danger nouveau ou différent ?",
+                "Des mesures sont-elles prises pour garantir qu’une mesure de contrôle des risques introduiten pour réduire un risque n’augmente pas un autre risque ?",
+                "Tous les dangers identifiés et leurs conséquences sont-ils traités ?",
+                "Les informations documentées concernant la non-conformité et les actions menées sont-elles conservées ?"
+            ]
+        },
+        "chapter 8: Evaluation_of_Overall_Residual_Risk":{
+            "8.1: Operational Planning and Control" :[
+                "Has the overall residual risk been evaluated against acceptability criteria?"
+            ],
+            "8.2: Requirements for Products and Services" :[
+                 "Are users informed of significant residual risks in accompanying documentation?"
+            ]
+        },    
+        "chapter 9: Risk_Management_Review":{
+            "9.1: Monitoring, Measurement, Analysis, and Evaluation" :[
+               "Has a risk management review been conducted before commercial distribution?"
+            ],
+            "9.2: Internal Audit" :[
+                "Does the review confirm the risk management plan was appropriately implemented?"
+            ]
+        },
+        "chapter 10: Production_and_Post_Production_Activities":{
+            "10.1: General" :[
+                "Is there a system to collect and review production and post-production information?"
+            ],
+            "10.2: Information_Collection" :[
+                "Is information collected from users, supply chain, and public sources?"
+            ],
+            "10.3: Information_Review":[
+                "Is collected information reviewed for relevance to safety?",
+                "Are unrecognized hazards or changes in risk acceptability identified?"
+            ],
+            "10.4: Actions" :[
+                "Are actions taken if collected information is relevant to safety?",
+                "Is the risk management process updated based on new information?"
+            ]
+        },
+        "Annexes":{
+            "Annex_A": "Is the rationale for requirements understood and applied?",
+            "Annex_B": "Is the risk management process overview referenced?",
+            "Annex_C": "Are fundamental risk concepts (e.g., hazards, hazardous situations) applied?"
+        }
+
+    }    
+}

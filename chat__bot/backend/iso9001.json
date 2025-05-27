@@ -1,0 +1,220 @@
+{
+    "description": "ISO 9001 est une norme qui définit les critères pour un système de management de la qualité.",
+    "questions": {
+        "chapter 4: Context of the organization": {
+            "4.1: Understanding the organization and its context" : [
+            	"Are internal and external issues relevant to the organization identified?",
+            	"Is information about these internal and external issues monitored?",
+            	"Are these issues considered in the quality management system (QMS)?"
+            ],
+            "4.2: Understanding the needs and expectations of interested parties": [
+                "Are relevant interested parties identified?",
+                "Are the requirements of interested parties monitored and reviewed?"
+            ],
+            "4.3: Determining the Scope of the Quality Management System":[
+                "Is the scope of the QMS defined?",
+                "Is the scope documented and available?"
+            ],
+            "4.4: QMS and Its Processes" :[
+                "Have the processes been identified?",
+                "Are the inputs and outputs of these processes identified?",
+                "Are the sequences and interactions of these processes identified?",
+                "Have criteria and methods to ensure the effectiveness of these processes been determined?",
+                "Are the necessary resources identified and available?",
+                "Are responsibilities assigned?",
+                "Are risks and opportunities related to these processes considered, and are appropriate actions planned?",
+                "Are these processes evaluated, measured, and analyzed?",
+                "Are actions taken if processes do not produce expected results?",
+                "Is information about these processes documented?"
+            ]
+    },
+        "chapter 5: Leadership": {
+            "5.1: Leadership and Commitment":[
+                "Does management assume and demonstrate responsibility and commitment to the effectiveness of the QMS?",
+                "Are the quality policy and objectives established and formalized?",
+                "Does management promote the process approach and risk-based thinking?",
+                "Does management ensure the availability of necessary resources for the QMS?",
+                "Does management communicate the importance of an effective QMS and compliance with requirements, encouraging contributions to its effectiveness?",
+                "Does management ensure the QMS achieves its intended results?",
+                "Does management promote improvement?",
+                "Does management support others in relevant roles to demonstrate their responsibilities?",
+                "Does management demonstrate commitment to customer focus?",
+                "Are customer requirements determined and met?",
+                "Are risks and opportunities affecting product/service conformity identified and addressed?"
+            ],
+            "5.2: Quality Policy" :[
+                "Is the quality policy aligned with the organization’s purpose?",
+                "Is the policy established, reviewed, and updated regularly by management?",
+                "Does the quality policy consider regulatory, legal, and customer requirements?",
+                "Does the quality policy provide a framework for quality objectives?",
+                "Does the quality policy include commitments to meeting requirements and continual improvement?",
+                "Is the quality policy communicated within the organization?",
+                "Is the quality policy made available to interested parties?"
+        ],
+            "5.3: Organizational Roles, Responsibilities, and Authorities":[
+                "Are responsibilities and authorities clearly defined and communicated?",
+                "Has a management representative been appointed to report on QMS performance and improvement opportunities?",
+                "Has a representative been appointed to ensure customer awareness and promote customer focus?",
+                "Has a representative been appointed to oversee the QMS?"
+            ]
+            
+        },
+        "chapter 6: Planification": {
+            "6.1: Actions to Address Risks and Opportunities" :[
+                "Are risks and opportunities for the organization identified?",
+                "Does QMS planning consider risks and opportunities?",
+                "Are actions implemented to address risks and opportunities?",
+                "Is the effectiveness of these actions measured?"
+            ],
+            "6.2: Quality Objectives and Planning to Achieve Them" :[
+                "Are quality objectives aligned with the quality policy?",
+                "Are quality objectives relevant to the organization’s purpose?",
+                "Are quality objectives measurable?",
+                "Do quality objectives consider applicable requirements?",
+                "Are quality objectives communicated and updated as needed?",
+                "Are monitoring methods (e.g., responsible party, resources, deadlines, evaluation) defined?"
+            ],
+            "6.3: Planning of Changes" :[
+                "Are changes to the QMS planned?",
+                "Are the purpose and potential consequences of changes considered?",
+                "Do changes account for resource availability and assigned responsibilities?"
+            ]
+
+        },
+        "chapter 7: Support":{
+            "7.1: Resources" :[
+                "Does management ensure resources are available for the QMS, continual improvement, and customer satisfaction?",
+                "Are internal resource constraints considered?",
+                "Are externally sourced resources identified?",
+                "Are human resources for the QMS identified and deployed?",
+                "Are necessary infrastructure and support services provided?",
+                "Does management maintain this infrastructure?",
+                "Is the work environment managed to ensure product/service conformity (e.g., physical, environmental, ergonomic, psychological conditions)?",
+                "Are resources provided to ensure reliable monitoring and measurement of products/services?",
+                "Is documented information retained to demonstrate resource adequacy?",
+                "Are measurement instruments calibrated, identified, and protected?",
+                "If calibration standards are unavailable, is documented evidence of reference standards retained?",
+                "If an instrument is defective, is the validity of prior measurements assessed, and corrective action taken if needed?",
+                "Are necessary knowledge and competencies identified for processes and product conformity?"
+            ],
+            "7.2: Competence" :[
+                "Does management identify personnel competencies affecting the QMS?",
+                "Are training needs for such personnel addressed?",
+                "Are indicators in place to measure the effectiveness of competence management actions?",
+                "Does management ensure personnel understand their roles and contributions to quality objectives?",
+                "Are records of personnel competencies maintained (e.g., training, skills, experience)?"
+            ],
+            "7.3: Awareness" :[
+                "Is personnel aware of the quality policy and objectives?",
+                "Do employees understand their contributions to QMS effectiveness and performance improvement?",
+                "Is personnel aware of the implications of non-conformities?"
+            ],
+            "7.4: Communication" :[
+                "Are internal and external communication needs and methods defined?"
+            ],
+            "7.5: Documented Information" :[
+                "Does the QMS include documented information required by standards and deemed necessary?",
+                "Is documented information available, identifiable, suitable, and protected (e.g., confidentiality, misuse)?",
+                "Is documented information approved?",
+                "Are controls in place for documented information (e.g., distribution, access, storage, retention)?",
+                "Is externally sourced documented information identified?",
+                "Is documented information retained as evidence of conformity protected from unintended alterations?"
+            ]
+        },
+        "chapter 8: Operation":{
+            "8.1: Operational Planning and Control" :[
+                "Are processes needed to deliver products/services developed and planned?",
+                "Does planning consider product/service requirements?",
+                "Are acceptance criteria for products/services defined?",
+                "Are resources for product/service delivery planned?",
+                "Is documented information retained to confirm processes were executed as planned and products/services meet requirements?",
+                "Are planned changes controlled?",
+                "Are unplanned changes analyzed, with actions taken to mitigate negative effects?"
+            ],
+            "8.2: Requirements for Products and Services" :[
+                "Are customer-specific requirements (e.g., urgent actions) determined?",
+                "Are measures taken to preserve conformity during handling, storage, and delivery (including care for customer property)?",
+                "Is communication maintained with customers for feedback and complaints?",
+                "Are customer requirements (stated/unstated), regulatory, and legal requirements identified?",
+                "Are product/service requirements reviewed regularly?",
+                "Are discrepancies between contract/order requirements and prior agreements resolved?",
+                "Is documented evidence retained for requirement reviews and resulting actions?",
+                "Are new product/service requirements documented?",
+                "If requirements change, are documents updated and relevant personnel informed?"
+            ],
+            "8.3: Design and Development" :[
+                "Is product/service design and development planned?",
+                "Are design stages, reviews, and validations defined?",
+                "Are interfaces between design teams managed (responsibilities/authorities)?",
+                "Are internal/external resource needs identified?",
+                "Are design inputs (e.g., functional/performance requirements, legal standards, potential failure impacts) determined and recorded?",
+                "Are design outputs controlled, and reviews conducted to verify achievement of expected results?",
+                "Are validation activities performed to confirm products/services meet intended requirements before delivery?",
+                "If design outputs fail reviews/validations, are corrective actions taken?",
+                "Is documented information on design processes retained?",
+                "Are design changes verified/validated before implementation, with records maintained?"
+            ],
+            "8.4: Control of Externally Provided Processes, Products, and Services" :[
+                "Are criteria established for selecting, evaluating, and monitoring external providers?",
+                "Are risks of outsourcing considered?",
+                "Are methods defined to verify externally provided products/services meet requirements?",
+                "Is conformity of externally provided products/services verified?",
+                "Are provider requirements communicated (e.g., deliverables, competencies, verification methods)?"
+            ],
+            "8.5: Production and Service Provision" :[
+                "Are production/service activities planned and controlled (including post-delivery)?",
+                "Are processes validated where outputs cannot be verified afterward?",
+                "Are outputs identified and controlled throughout production, with records maintained?",
+                "Is customer/provider property under the organization’s control safeguarded?"
+            ],
+            "8.6: Release of Products and Services" :[
+                "Are products/services released only after meeting planned requirements (unless approved by authorities/customers)?",
+                "Is documented information on release retained?"
+            ],
+            "8.7: Control of Nonconforming Outputs" :[
+                "Are nonconforming outputs identified and controlled to prevent unintended use?",
+                "Are actions taken (e.g., correction, isolation, customer notification, concessions)?",
+                "Is documented information on nonconformities and actions retained?"
+
+            ]
+        },    
+        "chapter 9: Performance evaluation":{
+            "9.1: Monitoring, Measurement, Analysis, and Evaluation" :[
+               "Are monitoring activities defined and implemented?",
+                "Are monitoring results analyzed and evaluated?",
+                "Is documented evidence of monitoring retained?",
+                "Is customer satisfaction monitored (with defined methods)?"
+            ],
+            "9.2: Internal Audit" :[
+                "Are audits conducted at planned intervals?",
+                "Are audit criteria/scopes defined, with impartial auditors selected?",
+                "Are audit results reported to management, with actions taken?",
+                "Is documented evidence of audit programs/results retained?"
+            ],
+            "9.3: Management Review" :[
+                "Are management reviews planned and conducted per standard requirements?",
+                "Do reviews address improvement opportunities and potential QMS changes?",
+                "Is documented information on management reviews retained?"
+            ]
+
+        },
+        "chapter 10: Improvement":{
+            "10.1: General" :[
+                "Are actions taken to meet customer requirements and enhance satisfaction?"
+            ],
+            "10.2: Nonconformity and Corrective Action" :[
+                "Are nonconformities/complaints addressed (e.g., containment, correction, impact assessment)?",
+                "Are root causes analyzed to prevent recurrence?",
+                "Is corrective action effectiveness measured?",
+                "Is documented evidence of nonconformities/actions retained?",
+                "Are risks/opportunities updated if needed?",
+                "Is the QMS adjusted if necessary?"
+            ],
+            "10.3: Continual Improvement" :[
+                "Is continual improvement of QMS effectiveness ensured?"
+
+            ]
+        }
+
+    }    
+}

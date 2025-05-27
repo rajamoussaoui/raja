@@ -1,0 +1,111 @@
+{
+    "description": "ISO 27001 is a global standard that helps organizations manage and protect sensitive information through a structured information security management system (ISMS).",
+    "questions": {
+            "chapter 4: Context of the organization": {
+              "4.1 Understanding the organization and its context": [
+                "Have the internal and external issues that are relevant to the ISMS, and that impact on the achievement of its expected outcome, been determined?"
+              ],
+              "4.2 Understanding the needs and expectations of interested parties": [
+                "Has the organization determined the interested parties that are relevant to the ISMS?",
+                "Have the requirements of these interested parties been determined, including legal, regulatory and contractual requirements?"
+              ],
+              "4.3 Determining the scope of the ISMS": [
+                "Have the boundaries and applicability of the ISMS been determined to establish its scope, taking into consideration the external and internal issues, the requirements of interested parties and the interfaces and dependencies with other organizations?",
+                "Is the scope documented?"
+              ]
+            },
+            "chapter 5: Leadership": {
+              "5.1 Leadership and commitment": [
+                "Is the organization’s leadership commitment to the ISMS demonstrated by:\n• Establishing the information security policy and objectives, compatible with the strategic direction of the organization, and in promotion of continual improvement?",
+                "Ensuring the integration of the ISMS requirements into its business processes?",
+                "Ensuring resources are available for the ISMS, and directing and supporting individuals, including management, who contribute to its effectiveness?",
+                "Communicating the importance of effective information security and conformance to ISMS requirements?"
+              ],
+              "5.2 Policy": [
+                "Is there an established information security policy that is appropriate, gives a framework for setting objectives, and demonstrates commitment to meeting requirements and for continual improvement?",
+                "Is the policy documented and communicated to employees and relevant interested parties?"
+              ],
+              "5.3 Organizational roles, responsibilities and authorities": [
+                "Are the roles within the ISMS clearly defined and communicated?",
+                "Are the responsibilities and authorities for conformance and reporting on ISMS performance assigned?"
+              ]
+            },
+            "chapter 6: Planning": {
+              "6.1 Actions to address risks and opportunities": [
+                "Have the internal and external issues, and the requirements of interested parties been considered to determine the risks and opportunities that need to be addressed to ensure that the ISMS achieves its outcome, that undesired effects are prevented or reduced, and that continual improvement is achieved?",
+                "Have actions to address risks and opportunities been planned, and integrated into the ISMS processes, and are they evaluated for effectiveness?",
+                "Has an information security risk assessment process that establishes the criteria for performing information security risk assessments, including risk acceptance criteria been defined?",
+                "Is the information security risk assessment process repeatable and does it produce consistent, valid and comparable results?",
+                "Does the information security risk assessment process identify risks associated with loss of confidentiality, integrity and availability for information within the scope of the ISMS, and are risk owners identified?",
+                "Are information security risks analysed to assess the realistic likelihood and potential consequences that would result, if they were to occur, and have the levels of risk been determined?",
+                "Are information security risks compared to the established risk criteria and prioritised?",
+                "Is documented information about the information security risk assessment process available?",
+                "Is there an information security risk treatment process to select appropriate risk treatment options for the results of the information security risk assessment, and are controls determined to implement the risk treatment option chosen?",
+                "Have the controls determined, been compared with ISO/IEC 27001:2017 Annex A to verify that no necessary controls have been missed?",
+                "Has a Statement of Applicability been produced to justify Annex A exclusions, and inclusions together with the control implementation status?",
+                "Has an information security risk treatment plan been formulated and approved by risk owners, and have residual information security risks been authorised by risk owners?",
+                "Is documented information about the information security risk treatment process available?"
+              ],
+              "6.2 Information security objectives and planning to achieve them": [
+                "Have measurable ISMS objectives and targets been established, documented and communicated throughout the organization?",
+                "In setting its objectives, has the organization determined what needs to be done, when and by whom?"
+              ]
+            },
+            "chapter 7: Support": {
+              "7.3 Awareness": [
+                "Is everyone within the organization’s control aware of the importance of the information security policy, their contribution to the effectiveness of the ISMS and the implications of not conforming?"
+              ],
+              "7.4 Communication": [
+                "Has the organization determined the need for internal and external communications relevant to the ISMS, including what to communicate, when, with whom, and who by, and the processes by which this is achieved?"
+              ],
+              "7.5 Documented information": [
+                "Has the organization determined the documented information necessary for the effectiveness of the ISMS?",
+                "Is the documented information in the appropriate format, and has it been identified, reviewed and approved for suitability?",
+                "Is the documented information controlled such that it is available and adequately protected, distributed, stored, retained and under change control, including documents of external origin required by the organization for the ISMS?"
+              ]
+            },
+            "chapter 8: Operation": {
+              "8.1 Operational planning and control": [
+                "Has a programme to ensure the ISMS achieves its outcomes, requirements and objectives been developed and implemented?",
+                "Is documented evidence retained to demonstrate that processes have been carried out as planned?",
+                "Are changes planned and controlled, and unintended changes reviewed to mitigate any adverse results?",
+                "Have outsourced processes been determined and are they controlled?"
+              ],
+              "8.2 Information security risk assessment": [
+                "Are information security risk assessments performed at planned intervals or when significant changes occur, and is documented information retained?"
+              ],
+              "8.3 Information security risk treatment": [
+                "Has the information security risk treatment plan been implemented and documented information retained?"
+              ]
+            },
+            "chapter 9: Performance evaluation": {
+              "9.1 Monitoring, measurement, analysis and evaluation": [
+                "Is the information security performance and effectiveness of the ISMS evaluated?",
+                "Has it been determined what needs to be monitored and measured, when, by whom, the methods to be used, and when the results will be evaluated?",
+                "Is documented information retained as evidence of the results of monitoring and measurement?"
+              ],
+              "9.2 Internal audit": [
+                "Are internal audits conducted periodically to check that the ISMS is effective and conforms to both ISO/IEC 27001:2022 and the organization’s requirements?",
+                "Are the audits conducted by an appropriate method and in line with an audit programme based on the results of risk assessments and previous audits?",
+                "Are results of audits reported to management, and is documented information about the audit programme and audit results retained?",
+                "Where non conformities are identified, are they subject to corrective action (see section 18)?"
+              ],
+              "9.3 Management review": [
+                "Do top management undertake a review of the ISMS at planned intervals?",
+                "Does the output from the ISMS management review identify changes and improvements?",
+                "Are the results of the management review documented, acted upon and communicated to interested parties as appropriate?"
+              ]
+            },
+            "chapter 10: Improvement": {
+              "10.1 Nonconformity and corrective action": [
+                "Have actions to control, correct and deal with the consequences of non-conformities been identified?",
+                "Has the need for action been evaluated to eliminate the root cause of non-conformities to prevent reoccurrence?",
+                "Have any actions identified been implemented and reviewed for effectiveness and given rise to improvements to the ISMS?",
+                "Is documented information retained as evidence of the nature of non-conformities, actions taken and the results?"
+              ]
+            }
+    }
+          
+
+     
+}

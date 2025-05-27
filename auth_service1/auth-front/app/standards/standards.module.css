@@ -1,0 +1,337 @@
+.pageContainer {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    color: #1e293b;
+    padding: 2rem 0;
+  }
+  
+  :global(.dark).pageContainer {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .backButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  
+  .backButton:hover {
+    background-color: #f1f5f9;
+    color: #334155;
+  }
+  
+  :global(.dark).backButton {
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  :global(.dark).backButton:hover {
+    background-color: #1e293b;
+    color: #e2e8f0;
+  }
+  
+  .pageTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-left: auto;
+    color: #0f172a;
+  }
+  
+  :global(.dark).pageTitle {
+    color: #f8fafc;
+  }
+  
+  .standardsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    .standardsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .standardsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .standardCard {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .standardCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  :global(.dark).standardCard {
+    background-color: #1e293b;
+  }
+  
+  .standardCover {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f5f9;
+  }
+  
+  :global(.dark).standardCover {
+    background-color: #334155;
+  }
+  
+  .coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .standardInfo {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .standardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+  
+  :global(.dark).standardTitle {
+    color: #f8fafc;
+  }
+  
+  .standardDescription {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+  
+  :global(.dark).standardDescription {
+    color: #94a3b8;
+  }
+  
+  .standardActions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+  
+  .viewButton,
+  .downloadButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .viewButton {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .viewButton:hover {
+    background-color: #0096c7;
+  }
+  
+  .downloadButton {
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+  }
+  
+  .downloadButton:hover {
+    background-color: #f1f5f9;
+    color: #334155;
+  }
+  
+  :global(.dark).downloadButton {
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  :global(.dark).downloadButton:hover {
+    background-color: #1e293b;
+    color: #e2e8f0;
+  }
+  
+  /* PDF Viewer Styles */
+  .pdfViewerContainer {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  :global(.dark).pdfViewerContainer {
+    background-color: #1e293b;
+  }
+  
+  .pdfHeader {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 1rem;
+  }
+  
+  :global(.dark).pdfHeader {
+    border-color: #334155;
+  }
+  
+  .closeButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .closeButton:hover {
+    background-color: #f1f5f9;
+    color: #334155;
+  }
+  
+  :global(.dark).closeButton {
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  :global(.dark).closeButton:hover {
+    background-color: #1e293b;
+    color: #e2e8f0;
+  }
+  
+  .pdfTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+    flex: 1;
+  }
+  
+  :global(.dark).pdfTitle {
+    color: #f8fafc;
+  }
+  
+  .downloadPdfButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  
+  .downloadPdfButton:hover {
+    background-color: #0096c7;
+  }
+  
+  .pdfEmbed {
+    height: 70vh;
+    width: 100%;
+    border: none;
+  }
+  
+  .pdfFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .pdfFallback {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  
+  :global(.dark).pdfFallback {
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  .externalLinkButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  
+  .externalLinkButton:hover {
+    background-color: #0096c7;
+  }
+  
