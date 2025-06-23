@@ -4,7 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routes import auth, user, admin
 from app.database.session import engine, Base
-
+from app.routes import user # type: ignore
+from fastapi.staticfiles import StaticFiles
 # Create tables
 Base.metadata.create_all(bind=engine)
 
@@ -19,11 +20,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # Include routers
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(user.router, prefix="/users", tags=["users"])
 app.include_router(admin.router, prefix="/admin", tags=["admin"])
-
+app.include_router(user.router)
 @app.get("/")
 def root():
     return {"message": "Welcome to the API"}

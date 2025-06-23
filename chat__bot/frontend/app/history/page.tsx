@@ -68,12 +68,12 @@ export default function HistoryPage() {
     }
   }
 
-  const handleOpenConversation = (conversationId: string) => {
-     // Store the conversation ID in localStorage
-   localStorage.setItem('currentConversationId', conversationId);
-    router.push(`/`)
-  }
-
+const handleOpenConversation = (conversationId: string) => {
+  console.log('Storing conversation ID:', conversationId); // Log before storing
+  localStorage.setItem('currentConversationId', conversationId);
+  console.log('Redirecting to main page'); // Log before redirect
+  router.push('/');
+}
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">

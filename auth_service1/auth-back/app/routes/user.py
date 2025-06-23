@@ -1,79 +1,79 @@
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
 from sqlalchemy.orm import Session
-from typing import Optional
 from app.database.session import get_db
-from app.database.models import User
 from app.schemas.user import UserOut
+from app.crud.user import get_user_by_email, update_user_profile, update_user_password
 from app.core.security import get_current_user, verify_password, get_password_hash
-from app.services.user import UserService
+from app.database.models import User
 
-router = APIRouter()
 
-@router.get("/me", response_model=UserOut)
-def read_current_user(
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
+router = APIRouter(prefix="/user", tags=["Users"])
+
+
+
+@router.get("/by-email", response_model=UserOut)
+def read_user_by_email(email: str = Query(...), db: Session = Depends(get_db)):
+    user = get_user_by_email(db, email)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user
+
+@router.put("/profile")
+async def update_profile(
+    email: str = Form(...),
+    name: str = Form(None),
+    image: UploadFile = File(None),
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)  # <- Add this line
 ):
-    return current_user
+    if current_user.email != email:
+        raise HTTPException(status_code=403, detail="Not authorized to update this profile")
 
-@router.put("/me")
-async def update_current_user(
-    name: Optional[str] = Form(None),
-    image: Optional[UploadFile] = File(None),
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
-):
-    try:
-        update_data = {}
-        
-        if name is not None and name != current_user.name:
-            update_data["name"] = name
-            
-        if image is not None:
-            # Validate image size (2MB max)
-            contents = await image.read()
-            if len(contents) > 2 * 1024 * 1024:
-                raise HTTPException(status_code=400, detail="Image size must be less than 2MB")
-            
-            # Here you would typically upload the image to storage (S3, local storage, etc.)
-            # and save the URL/path to the database
-            # For now, we'll just pretend we stored it and got a URL
-            image_url = f"path/to/storage/{image.filename}"
-            update_data["image"] = image_url
-            
-        if not update_data:
-            return {"success": False, "error": "No changes detected"}
-            
-        updated_user = UserService.update_user(db, current_user.id, update_data)
-        return {"success": True, "user": updated_user}
-        
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    user = get_user_by_email(db, email)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
 
-@router.post("/me/password")
-def update_password(
+    updated_data = {}
+    if name:
+        updated_data["name"] = name
+    if image:
+        # Optional: Save the image file or upload to cloud storage
+        updated_data["image"] = image.filename  # Example only
+
+    success = update_user_profile(db, user, updated_data)
+
+    if not success:
+        raise HTTPException(status_code=500, detail="Failed to update profile")
+
+    return {"success": True, "message": "Profile updated successfully"}
+
+@router.post("/password")
+async def change_password(
+    email: str = Form(...),
     current_password: str = Form(...),
     new_password: str = Form(...),
     confirm_password: str = Form(...),
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)  # <- Add this line
 ):
-    try:
-        # Verify current password
-        if not verify_password(current_password, current_user.hashed_password):
-            raise HTTPException(status_code=400, detail="Current password is incorrect")
-            
-        # Check if new passwords match
-        if new_password != confirm_password:
-            raise HTTPException(status_code=400, detail="New passwords do not match")
-            
-        # Update password
-        hashed_password = get_password_hash(new_password)
-        UserService.update_user(db, current_user.id, {"hashed_password": hashed_password})
-        
-        return {"success": True}
-        
-    except HTTPException as he:
-        raise he
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    if current_user.email != email:
+        raise HTTPException(status_code=403, detail="Not authorized to change this password")
+
+    user = get_user_by_email(db, email)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    if new_password != confirm_password:
+        raise HTTPException(status_code=400, detail="Passwords do not match")
+
+    if not verify_password(current_password, user.hashed_password):
+        raise HTTPException(status_code=400, detail="Current password is incorrect")
+
+    hashed_new_password = get_password_hash(new_password)
+
+    success = update_user_password(db, user, hashed_new_password)
+
+    if not success:
+        raise HTTPException(status_code=500, detail="Failed to update password")
+
+    return {"success": True, "message": "Password updated successfully"}

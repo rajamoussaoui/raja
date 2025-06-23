@@ -73,8 +73,8 @@ class AuthService:
             raise
 
     @staticmethod
-    def register_user(db: Session, user_data: UserSignUp) -> User:
-        """Register new user"""
+    def register_user(db: Session, user_data: UserSignUp) -> tuple[User, Token]:
+        """Register new user and return user + tokens"""
         try:
             if db.query(User).filter(User.email == user_data.email).first():
                 logger.warning(f"Registration attempt with existing email: {user_data.email}")
@@ -94,9 +94,11 @@ class AuthService:
             db.commit()
             db.refresh(user)
             
-            logger.info(f"New user registered: {user.email}")
-            return user
+            # Generate tokens after successful registration
+            tokens = AuthService.create_tokens(user)
             
+            logger.info(f"New user registered: {user.email}")
+            return user, tokens  # Return both as a tuple
         except SQLAlchemyError as e:
             db.rollback()
             logger.error(f"Database error during registration: {str(e)}", exc_info=True)
@@ -104,8 +106,6 @@ class AuthService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Database operation failed"
             )
-        except HTTPException:
-            raise
         except Exception as e:
             logger.error(f"Registration error: {str(e)}", exc_info=True)
             raise HTTPException(

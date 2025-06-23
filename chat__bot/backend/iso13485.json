@@ -4,19 +4,11 @@
     "chapter 4: Quality management system": {
       "4.1: General requirements": [
         "Documentation covers the actions and roles of stakeholders enabling an effective QMS that meets standards and regulations.",
-        "Processes are concretely applied and controlled in terms of their risks and interactions.",
-        "Processes are monitored for effectiveness, measured, improved, and these actions are recorded.",
-        "The effects of changes on processes are evaluated and controlled.",
-        "Outsourced processes are relevant and controlled in terms of quality and responsibility.",
         "There are documented procedures and records for validation, modification, and re-validation of QMS software applications."
       ],
       "4.2: Documentation requirements": [
         "The documentation system meets all requirements and includes a manual, policy, and quality objectives ensuring effective process control.",
-        "The quality manual specifies the scope, procedures, interaction between processes, and document structure.",
-        "The medical device file demonstrates compliance with requirements and includes all documents related to proper use and safety during operation.",
-        "A documented procedure ensures control over the entire document lifecycle and their retention for legal durations.",
-        "All document modifications are approved by a competent person.",
-        "A documented procedure ensures control over the entire record lifecycle, their retention for legal durations, and confidentiality maintenance."
+        "The quality manual specifies the scope, procedures, interaction between processes, and document structure."
       ]
     },
     "chapter 5: Management responsibility": {
@@ -32,12 +24,10 @@
       ],
       "5.5: Responsibility, authority and communication": [
         "Management defines, documents, and communicates roles, responsibilities, and authorities and ensures autonomy for tasks.",
-        "Management appoints a 'Quality Representative' with authority over the QMS.",
         "Management ensures effective communication regarding the QMS."
       ],
       "5.6: Management review": [
         "Management conducts, records, and retains reviews on QMS performance and developments, following a documented procedure.",
-        "The inputs to the Management Review include all required information at a minimum.",
         "The outputs from the Management Review are recorded and contribute to product, process, and QMS improvement."
       ]
     },
@@ -62,37 +52,19 @@
       ],
       "7.2: Customer-related processes": [
         "All explicit, implicit, regulatory, or use-related requirements for the product are determined.",
-        "A requirements review is conducted before any customer commitment, and its results are recorded and retained.",
         "Communication with customers and regulatory authorities is planned and documented."
       ],
       "7.3: Design and development": [
         "The design and development process is documented, planned, reviewed, and validated, including the mobilization of required resources.",
-        "All information and requirements for design and development are complete, reviewed, approved, recorded, and retained.",
-        "Outputs from design and development are verified, approved, recorded, and retained to enable proper manufacturing and use of the product.",
-        "Design and development reviews are conducted with relevant participants, documented, recorded, and retained to anticipate problems and ensure results.",
-        "Design and development verification is planned, conducted, documented, recorded, and retained to ensure satisfaction of input-output requirements.",
-        "Design and development validation is planned, conducted, documented, recorded, and retained to ensure satisfaction of requirements for intended product use.",
-        "Transfer to production follows a documented and recorded procedure to ensure that provided elements are verified and suitable for manufacturing.",
-        "Any design change follows a documented, recorded, and retained procedure to control risks on requirements and use of delivered or upcoming products.",
         "The design and development file of a medical device includes records of compliance with requirements and control of modifications."
       ],
       "7.4: Purchasing": [
         "Supplier performance is periodically evaluated according to a documented procedure, and records are retained.",
-        "Purchasing information from suppliers is controlled, traceable, documented, and recorded.",
         "Purchased products are appropriately verified and traceably recorded."
       ],
       "7.5: Production and service provision": [
         "Product conformity is ensured by controlled production and service provision, with traceability recorded, verified, and approved.",
-        "If necessary for proper use, cleanliness or contamination control requirements are documented.",
-        "If necessary for proper use, installation and verification requirements for the medical device are documented, and results recorded and retained.",
-        "If necessary for proper use, procedures for services associated with the medical device are documented and records retained for continuous improvement.",
-        "Sterilization traceability of medical device batches is documented and retained.",
-        "Production processes and software applications are validated according to documented procedures with results recorded and retained.",
-        "Sterilization processes are validated per documented procedures, with results and conclusions recorded and retained.",
-        "Medical devices have a Unique Device Identifier per documented procedures, and returned devices are clearly distinguishable from conforming ones.",
-        "Medical device traceability complies with documented procedures, and implantable devices have complete records available for inspection and retained.",
-        "Any customer property is handled in a controlled manner and its journey or assessment is traceably recorded.",
-        "The medical device and its components are preserved from any deterioration of conformity according to documented procedures, with records for specific conditions if needed."
+        "Sterilization traceability of medical device batches is documented and retained."
       ],
       "7.6: Control of monitoring and measuring equipment": [
         "Monitoring and measuring activities and equipment follow documented procedures to ensure product conformity.",
@@ -105,17 +77,10 @@
       ],
       "8.2: Monitoring and measurement": [
         "QMS effectiveness is monitored using methods and documented procedures to collect and use customer feedback.",
-        "Complaints are handled according to documented procedures, and treatment records are retained.",
-        "Reporting to authorities follows a documented procedure, and records are retained.",
-        "An internal audit program follows a documented procedure, with conclusions, corrections, follow-ups, and verifications recorded and retained.",
-        "Processes are monitored, success measured, and improved continuously.",
         "Product conformity is periodically evaluated during realization, and evidence up to release is recorded and retained."
       ],
       "8.3: Control of non-conforming product": [
         "Non-conforming products are managed per documented procedures, and treatment results are recorded and retained.",
-        "Before delivery, non-conforming products are treated, and any deviation is recorded and retained.",
-        "After delivery, non-conforming products are treated, and actions are recorded and retained.",
-        "Warning notices are issued per documented procedures that can be triggered anytime, with actions recorded and retained.",
         "Product rework follows documented, reviewed, and approved procedures, with results recorded and retained."
       ],
       "8.4: Analysis of data": [
@@ -123,7 +88,6 @@
       ],
       "8.5: Improvement": [
         "Any useful change to QMS performance and medical device safety is identified and implemented.",
-        "Corrective actions eliminate the causes of non-conformities without delay per documented procedures, and results are recorded and retained.",
         "Preventive actions eliminate the causes of potential non-conformities per documented procedures, and results are recorded and retained."
       ]
     }

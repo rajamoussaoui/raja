@@ -18,6 +18,8 @@ class User(Base):
     role = Column(Enum(Role), default=Role.USER)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    image = Column(String, nullable=True) 
+    
 
 class PasswordResetToken(Base):
     __tablename__ = "password_reset_tokens"

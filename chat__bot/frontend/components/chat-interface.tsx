@@ -61,6 +61,8 @@ interface Response {
   question_key: string;
 }
 
+
+
 interface ResponsesData {
   responses: Response[];
   total_responses: number;
@@ -174,9 +176,13 @@ const Chatbot: React.FC = () => {
     setIsLoading(true);
     console.log('Attempting to load conversation:', conversationId); // Debug log
     const response = await axios.get(`${API_URL}/conversations/${conversationId}`);
+     if (!response.data.success || !response.data.conversation) {
+      throw new Error('Invalid conversation data');
+    }
     console.log('API response:', response.data); // Debug log
     const conversation = response.data;
-    
+     // Safely use norme with fallback
+    const norme = conversation.norme || 'Unknown';
     
     // Set the ISO norm
     setIsoNorm(conversation.norme);
@@ -185,7 +191,7 @@ const Chatbot: React.FC = () => {
     const initialMessages: Message[] = [
       {
         id: uuidv4(),
-        content: `🔹 Resuming ${conversation.norme.toUpperCase()} compliance assessment...`,
+        content: `🔹 Resuming ${(conversation.norme || 'Unknown').toUpperCase()} compliance assessment...`,
         sender: "bot",
         timestamp: new Date(),
       },

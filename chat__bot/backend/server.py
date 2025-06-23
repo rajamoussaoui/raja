@@ -13,6 +13,9 @@ from collections import defaultdict
 from pymongo import MongoClient
 from bson import ObjectId
 import datetime
+import traceback
+import logging
+import os
 
 # Configuration MongoDB
 client = MongoClient('mongodb://localhost:27017/')
@@ -492,104 +495,67 @@ def get_conversation_history():
             "error": f"Could not retrieve conversation history: {str(e)}"
         }), 500
 
-# Nouvelle route pour charger une conversation spécifique
+
+
+def serialize_doc(doc):
+    """
+    Convertit récursivement les objets non sérialisables en types JSON compatibles.
+    Gère ObjectId, datetime, listes, dictionnaires imbriqués, None, etc.
+    """
+    if doc is None:
+        return None
+
+    if isinstance(doc, dict):
+        return {key: serialize_doc(value) for key, value in doc.items()}
+    elif isinstance(doc, list):
+        return [serialize_doc(item) for item in doc]
+    elif isinstance(doc, ObjectId):
+        return str(doc)
+
+    # Alternative pour détecter datetime sans from datetime import datetime
+    elif type(doc).__name__ == "datetime":
+        return doc.isoformat()
+
+    else:
+        return doc  
 @app.route("/api/conversations/<conversation_id>", methods=["GET"])
 def load_conversation(conversation_id):
     """Load a specific conversation by ID"""
     try:
-        # Récupérer la conversation
+        # Validate ObjectId
+        if not ObjectId.is_valid(conversation_id):
+            return jsonify({"error": "Invalid conversation ID format"}), 400
+
+        # Get conversation
         conversation = conversations_collection.find_one({"_id": ObjectId(conversation_id)})
         if not conversation:
             return jsonify({"error": "Conversation not found"}), 404
-        
-        # Récupérer toutes les réponses associées à cette conversation
+
+        # Serialize conversation
+        conversation = serialize_doc(conversation)
+        logging.debug(f"Serialized conversation: {conversation}")
+
+        # Validate required fields
+        required_fields = ["norme", "created_at", "last_updated", "description"]
+        for field in required_fields:
+            if not conversation.get(field):
+                return jsonify({"error": f"Conversation missing required field: {field}"}), 400
+
+        # Get responses
         responses = list(responses_collection.find({"conversation_id": ObjectId(conversation_id)}))
-        
-        # Convertir les objets pour la sérialisation JSON
-        conversation["_id"] = str(conversation["_id"])
-        conversation["created_at"] = conversation["created_at"].isoformat()
-        conversation["last_updated"] = conversation["last_updated"].isoformat()
-        
-        for resp in responses:
-            resp["_id"] = str(resp["_id"])
-            resp["conversation_id"] = str(resp["conversation_id"])
-            resp["timestamp"] = resp["timestamp"].isoformat()
-        
-        # Récupérer les informations du standard
-        norme = conversation["norme"].lower()
-        with open(f"{norme.lower()}.json", "r", encoding="utf-8") as f:
-            standard_data = json.load(f)
-        
-        # Recréer la session en mémoire si nécessaire
-        if norme not in user_sessions:
-            chapters = list(standard_data["questions"].keys())
-            first_chapter = chapters[0]
-            first_subchapter = list(standard_data["questions"][first_chapter].keys())[0]
-            
-            # Créer la session avec les données existantes
-            user_sessions[norme] = {
-                "description": conversation["description"],
-                "responses": [],
-                "responses_by_question": {},
-                "current_chapter": first_chapter,
-                "current_subchapter": first_subchapter,
-                "current_question_index": 0,
-                "chapters": chapters,
-                "subchapters": {
-                    chapter: list(subchapters.keys())
-                    for chapter, subchapters in standard_data["questions"].items()
-                },
-                "chapter_status": {},
-                "edited_questions": {},
-                "conversation_id": conversation_id
-            }
-        
-        # Charger les réponses dans la session en mémoire
-        session = user_sessions[norme]
-        session["responses"] = []
-        session["responses_by_question"] = {}
-        
-        for resp in responses:
-            response_data = {
-                "question": resp["question"],
-                "reponse": resp["response"],
-                "evaluation": resp["evaluation"],
-                "score": resp["score"],
-                "recommendation": resp.get("recommendation", ""),
-                "chapter": resp["chapter"],
-                "subchapter": resp["subchapter"],
-                "question_index": resp["question_index"],
-                "question_key": resp["question_key"]
-            }
-            
-            session["responses"].append(response_data)
-            session["responses_by_question"][resp["question_key"]] = response_data
-        
+        responses = [serialize_doc(resp) for resp in responses]
+
+        # Return the conversation and its responses
         return jsonify({
             "success": True,
             "conversation": conversation,
-            "responses": responses,
-            "standard_info": {
-                "description": clean_text(standard_data["description"]),
-                "chapters": [
-                    {
-                        "name": chapter,
-                        "subchapters": [
-                            {
-                                "name": subchapter,
-                                "question_count": len(standard_data["questions"][chapter][subchapter])
-                            }
-                            for subchapter in standard_data["questions"][chapter]
-                        ]
-                    }
-                    for chapter in standard_data["questions"]
-                ]
-            }
+            "responses": responses
         })
-        
-    except Exception as e:
-        return jsonify({"error": f"Could not load conversation: {str(e)}"}), 500
 
+    except Exception as e:
+        logging.error(f"Could not load conversation: {str(e)}", exc_info=True)
+        return jsonify({"error": f"Could not load conversation: {str(e)}"}), 500
+    
 @app.route("/api/chapter_resume", methods=["POST"])
 def chapter_summary():
     """Generate chapter summary with scores"""
@@ -656,6 +622,7 @@ def chapter_summary():
     except Exception as e:
         print(f"Error generating chapter summary: {str(e)}")
         return jsonify({"error": "Could not generate chapter summary"}), 500
+
 
 @app.route("/api/resume", methods=["POST"])
 def generate_summary():
