@@ -1,54 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --background: 0 0% 100%; /* White background */
+    --foreground: 210 20% 10%; /* Dark text for readability */
+    --card: 210 40% 98%; /* Light blue card background */
+    --card-foreground: 210 20% 10%; /* Consistent dark text */
+    --popover: 210 40% 98%; /* Light blue popover */
+    --popover-foreground: 210 20% 10%; /* Matching dark text */
+    --primary: 200 80% 50%; /* Vibrant blue from logo */
+    --primary-foreground: 0 0% 100%; /* White text for contrast */
+    --secondary: 200 60% 90%; /* Softer blue for secondary elements */
+    --secondary-foreground: 210 20% 10%; /* Dark text */
+    --muted: 210 30% 92%; /* Subtle blue-gray for muted areas */
+    --muted-foreground: 210 15% 40%; /* Softer gray text */
+    --accent: 200 70% 85%; /* Light blue accent */
+    --accent-foreground: 210 20% 10%; /* Dark text */
+    --destructive: 0 80% 50%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text */
+    --border: 210 20% 88%; /* Soft blue border */
+    --input: 210 20% 88%; /* Matching input border */
+    --ring: 200 80% 50%; /* Blue ring for focus */
+    --radius: 0.75rem; /* Smooth corners */
   }
- 
+
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --background: 0 0% 100%; /* White background in dark mode */
+    --foreground: 210 40% 98%; /* Light text for contrast */
+    --card: 210 20% 12%; /* Darker blue card */
+    --card-foreground: 210 40% 98%; /* Light text */
+    --popover: 210 20% 12%; /* Dark blue popover */
+    --popover-foreground: 210 40% 98%; /* Light text */
+    --primary: 200 80% 60%; /* Brighter blue for dark mode */
+    --primary-foreground: 210 20% 10%; /* Dark text */
+    --secondary: 200 50% 30%; /* Deeper blue for secondary */
+    --secondary-foreground: 210 40% 98%; /* Light text */
+    --muted: 210 20% 20%; /* Dark muted tone */
+    --muted-foreground: 210 10% 60%; /* Lighter gray */
+    --accent: 200 60% 30%; /* Darker blue accent */
+    --accent-foreground: 210 40% 98%; /* Light text */
+    --destructive: 0 70% 45%; /* Muted red */
+    --destructive-foreground: 210 40% 98%; /* Light text */
+    --border: 210 20% 20%; /* Dark blue border */
+    --input: 210 20% 20%; /* Matching input border */
+    --ring: 200 80% 60%; /* Brighter blue ring */
   }
 }
- 
+
 @layer base {
   * {
     @apply border-[hsl(var(--border))];
@@ -56,5 +56,18 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+  .shadow-soft {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  .transition-smooth {
+    transition: all 0.3s ease-in-out;
   }
 }

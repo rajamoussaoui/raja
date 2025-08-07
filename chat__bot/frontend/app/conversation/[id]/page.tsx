@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Sidebar from '@/components/sidebar'
 
-interface Conversation {
+interface  Conversation {
   _id: string
   norme: string
   description: string

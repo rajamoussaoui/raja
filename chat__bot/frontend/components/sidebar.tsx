@@ -22,13 +22,31 @@ interface SidebarProps {
   isMobile: boolean
 }
 
+interface UserData {
+  nom: string
+  prenom: string
+}
+
 export default function Sidebar({ isMobile }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(!isMobile)
+  const [user, setUser] = useState<UserData | null>(null)
+
   const { theme } = useTheme()
   const pathname = usePathname()
 
   useEffect(() => {
     setIsOpen(!isMobile)
+
+    // 🔄 Lire depuis localStorage
+    const userData = localStorage.getItem("userData")
+    if (userData) {
+      try {
+        const parsedUser: UserData = JSON.parse(userData)
+        setUser(parsedUser)
+      } catch (e) {
+        console.error("Erreur parsing userData depuis localStorage:", e)
+      }
+    }
   }, [isMobile])
 
   const sidebarVariants = {
@@ -105,14 +123,19 @@ export default function Sidebar({ isMobile }: SidebarProps) {
         <div className="flex items-center">
           <Avatar className="h-9 w-9">
             <AvatarImage src="/placeholder.svg?height=36&width=36" alt="User" />
-            <AvatarFallback>ME</AvatarFallback>
+            <AvatarFallback>
+              {user ? `${user.prenom[0]}${user.nom[0]}`.toUpperCase() : "ME"}
+            </AvatarFallback>
           </Avatar>
           <motion.div variants={textVariants} className="ml-3">
-            <p className="text-sm font-medium">User</p>
-            <p className="text-xs text-muted-foreground">Online</p>
+            <p className="text-sm font-medium">
+              {user ? `${user.prenom} ${user.nom}` : "Utilisateur"}
+            </p>
+            <p className="text-xs text-muted-foreground">En ligne</p>
           </motion.div>
         </div>
       </div>
     </motion.div>
   )
 }
+  

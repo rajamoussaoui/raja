@@ -1,11 +1,9 @@
-//* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
 'use client'
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { format } from 'date-fns'
-import Sidebar from '@/components/sidebar' // Import the Sidebar component
+import Sidebar from '@/components/sidebar'
 
 interface Conversation {
   _id: string
@@ -21,19 +19,35 @@ export default function HistoryPage() {
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [selectedIds, setSelectedIds] = useState<string[]>([])
+  const [selectAll, setSelectAll] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
+    const token = localStorage.getItem('authToken')
+
+    if (!token) {
+      setIsAuthenticated(false)
+      setLoading(false)
+      return
+    }
+
+    setIsAuthenticated(true)
+
     const fetchConversations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/conversations/history')
-        
+        const response = await fetch('http://localhost:5000/api/conversations/history', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
 
         const data = await response.json()
-        
         if (!data.conversations) {
           throw new Error('Invalid data format')
         }
@@ -49,31 +63,90 @@ export default function HistoryPage() {
     fetchConversations()
   }, [])
 
+  const handleOpenConversation = (conversationId: string) => {
+    localStorage.setItem('currentConversationId', conversationId)
+    router.push('/')
+  }
+
   const handleDelete = async (conversationId: string) => {
+    const token = localStorage.getItem('authToken')
+    if (!token) return
+
     if (!confirm('Are you sure you want to delete this conversation?')) return
-    
+
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/conversations/${conversationId}`,
-        { method: 'DELETE' }
-      )
-      
-      if (!response.ok) {
-        throw new Error('Failed to delete conversation')
-      }
-      
+      const response = await fetch(`http://localhost:5000/api/conversations/${conversationId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      if (!response.ok) throw new Error('Failed to delete conversation')
+
       setConversations(prev => prev.filter(c => c._id !== conversationId))
+      setSelectedIds(prev => prev.filter(id => id !== conversationId))
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to delete conversation')
     }
   }
 
-const handleOpenConversation = (conversationId: string) => {
-  console.log('Storing conversation ID:', conversationId); // Log before storing
-  localStorage.setItem('currentConversationId', conversationId);
-  console.log('Redirecting to main page'); // Log before redirect
-  router.push('/');
-}
+  const handleSelect = (id: string) => {
+    setSelectedIds(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    )
+  }
+
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedIds([])
+    } else {
+      setSelectedIds(conversations.map(c => c._id))
+    }
+    setSelectAll(!selectAll)
+  }
+
+  const handleBulkDelete = async () => {
+    const token = localStorage.getItem('authToken')
+    if (!token) return
+
+    if (!confirm(`Delete ${selectedIds.length} selected conversations?`)) return
+
+    try {
+      await Promise.all(
+        selectedIds.map(id =>
+          fetch(`http://localhost:5000/api/conversations/${id}`, {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+        )
+      )
+      setConversations(prev => prev.filter(c => !selectedIds.includes(c._id)))
+      setSelectedIds([])
+      setSelectAll(false)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to delete selected conversations')
+    }
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <p className="text-gray-600 text-lg">Veuillez vous connecter pour voir votre historique.</p>
+          <button
+            onClick={() => router.push('/profile')}
+            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Se connecter
+          </button>
+        </div>
+      </div>
+    )
+  }
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -90,7 +163,7 @@ const handleOpenConversation = (conversationId: string) => {
           onClick={() => window.location.reload()}
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
-          Retry
+          Réessayer
         </button>
       </div>
     )
@@ -98,11 +171,8 @@ const handleOpenConversation = (conversationId: string) => {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar */}
       <Sidebar isMobile={false} />
-      
-      {/* Main content */}
-      <div className="flex-1 ml-64 p-8"> {/* Added ml-64 to account for sidebar width */}
+      <div className="flex-1 ml-64 p-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900">Conversation History</h1>
@@ -113,27 +183,14 @@ const handleOpenConversation = (conversationId: string) => {
 
           {conversations.length === 0 ? (
             <div className="text-center py-12 bg-white rounded-lg shadow">
-              <svg
-                className="mx-auto h-12 w-12 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">No conversations found</h3>
+              <h3 className="text-sm font-medium text-gray-900">No conversations found</h3>
               <p className="mt-1 text-sm text-gray-500">
                 You haven't completed any assessments yet.
               </p>
               <div className="mt-6">
                 <button
                   onClick={() => router.push('/')}
-                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
                   Start New Assessment
                 </button>
@@ -141,64 +198,67 @@ const handleOpenConversation = (conversationId: string) => {
             </div>
           ) : (
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+              <div className="flex justify-between items-center p-4 border-b border-gray-200">
+                <button
+                  onClick={handleSelectAll}
+                  className="text-sm text-blue-600 hover:underline"
+                >
+                  {selectAll ? 'Deselect All' : 'Select All'}
+                </button>
+                {selectedIds.length > 0 && (
+                  <button
+                    onClick={handleBulkDelete}
+                    className="text-sm text-red-600 hover:underline"
+                  >
+                    Delete Selected ({selectedIds.length})
+                  </button>
+                )}
+              </div>
+
               <ul className="divide-y divide-gray-200">
-                {conversations.map((conversation) => (
-                  <li key={conversation._id}>
-                    <div className="px-4 py-4 sm:px-6">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <p className="text-sm font-medium text-blue-600 truncate">
-                            {conversation.norme.toUpperCase()} Assessment
-                          </p>
-                          <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                            {conversation.status === 'completed' ? 'Completed' : 'In Progress'}
-                          </span>
-                        </div>
-                        {conversation.final_score && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Score: {conversation.final_score}%
-                          </span>
-                        )}
+                {conversations.map(conversation => (
+                  <li key={conversation._id} className="hover:bg-gray-50 px-4 py-4 sm:px-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="checkbox"
+                          checked={selectedIds.includes(conversation._id)}
+                          onChange={() => handleSelect(conversation._id)}
+                        />
+                        <p className="text-sm font-medium text-blue-600">
+                          {conversation.norme.toUpperCase()}
+                        </p>
+                        <span className={`ml-2 px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                          conversation.status === 'completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                        }`}>
+                          {conversation.status === 'completed' ? 'Completed' : 'In Progress'}
+                        </span>
                       </div>
-                      <div className="mt-2 sm:flex sm:justify-between">
-                        <div className="sm:flex">
-                          <p className="flex items-center text-sm text-gray-500">
-                            {conversation.description}
-                          </p>
-                        </div>
-                        <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                          <svg
-                            className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <p>
-                            Created on{' '}
-                            {format(new Date(conversation.created_at), 'MMM d, yyyy h:mm a')}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="mt-4 flex space-x-3">
-                        <button
-                          onClick={() => handleOpenConversation(conversation._id)}
-                          className="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        >
-                          Open
-                        </button>
-                        <button
-                          onClick={() => handleDelete(conversation._id)}
-                          className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                        >
-                          Delete
-                        </button>
-                      </div>
+                      {conversation.final_score && (
+                        <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                          Score: {conversation.final_score}%
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-2 text-sm text-gray-500">
+                      {conversation.description}
+                    </div>
+                    <div className="mt-2 text-sm text-gray-500">
+                      Created on {format(new Date(conversation.created_at), 'MMM d, yyyy h:mm a')}
+                    </div>
+                    <div className="mt-4 flex space-x-3">
+                      <button
+                        onClick={() => handleOpenConversation(conversation._id)}
+                        className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm rounded text-gray-700 bg-white hover:bg-gray-50"
+                      >
+                        Open
+                      </button>
+                      <button
+                        onClick={() => handleDelete(conversation._id)}
+                        className="inline-flex items-center px-3 py-1.5 border text-sm rounded text-red-700 bg-red-100 hover:bg-red-200"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </li>
                 ))}
